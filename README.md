@@ -34,7 +34,7 @@ The most important files in this projects are as follow:
 │   ├── datasetG7m.py           # create K-mer feature
 │   ├── model.py                # implementation of genome model
 │   ├── trainer7m.py            # genome model
-│   └── ru.sh                   # train scripts
+│   └── run.sh                   # train scripts
 ├── docs
 └── README.md
 ```
