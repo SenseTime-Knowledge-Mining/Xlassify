@@ -71,3 +71,9 @@ cd genome
 chmod +777 run.sh
 ./run.sh
 ```
+
+### Datasets
+
+Both 16S rRNA dataset and Genome dataset used in this study are from the UHGG which is publicly available. The data we used to train out model can be found in the `data` directory under the corresponding model folder (`16s` or `genome`).
+
+We also provide the processed k-mer feature matrix data, which can be downloaded from [Dropbox](https://www.dropbox.com/s/oxh6fb52peqfuum/kmer7_mat_ge5_le50_dedup.npy?dl=0), the total download size for this is around 3.3GB.
