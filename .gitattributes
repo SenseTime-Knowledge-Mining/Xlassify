@@ -1,0 +1,2 @@
+*.npy filter=lfs diff=lfs merge=lfs -text
+16s/slurm_split_data/*.pth filter=lfs diff=lfs merge=lfs -text
