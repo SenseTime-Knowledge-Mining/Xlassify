@@ -19,35 +19,54 @@ genome model:
 The most important files in this projects are as follow:
 ```bash
 .
-├── 16s                         # Xlassify 16s model
-│   ├── data                    # 16s dataset
-│   ├── slurm_split_data        # processed 16s data
-│   ├── kmer.py                 # create K-mer feature
-│   ├── model_chg3.py           # 16s model
-│   ├── model_chg_mnb.py        # naive Bayesian classifier model
-│   ├── model_chg_rdp.py        # RDP classifier model
-│   ├── model_chg_rf.py         # random forest model
-│   ├── model.py                # implementation of 16s model
-│   └── fold.sh                 # train scripts for 16s model and other baselines
-├── genome                      # Xlassify genome model
-│   ├── data                    # genome dataset
-│   ├── datasetG7m.py           # create K-mer feature
-│   ├── model.py                # implementation of genome model
-│   ├── trainer7m.py            # genome model
-│   └── run.sh                   # train scripts
 ├── docs
-└── README.md
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+├── setup.py
+├── src
+│   └── xlassify
+│       ├── dataset
+│       ├── __init__.py
+│       ├── interface.py
+│       ├── interface_test.py
+│       ├── model
+│       ├── network
+│       └── tools
+└── train
+    ├── 16s                         # Xlassify 16s model
+    │   ├── data                    # 16s dataset
+    │   ├── slurm_split_data        # processed 16s data
+    │   ├── kmer.py                 # create K-mer feature
+    │   ├── model_chg3.py           # 16s model
+    │   ├── model_chg_mnb.py        # naive Bayesian classifier model
+    │   ├── model_chg_rdp.py        # RDP classifier model
+    │   ├── model_chg_rf.py         # random forest model
+    │   ├── model.py                # implementation of 16s model
+    │   └── fold.sh                 # train scripts for 16s model and other baselines
+    └── genome                      # Xlassify genome model
+        ├── data                    # genome dataset
+        ├── datasetG7m.py           # create K-mer feature
+        ├── model.py                # implementation of genome model
+        ├── trainer7m.py            # genome model
+        └── run.sh                  # train scripts
 ```
 
 
 ### Installation
 
-We provide two ways to install Xlassify locally via pip or Docker.
+We provide three ways to install Xlassify locally via pip, conda or Docker.
 
 From pip:
 
 ```bash
 pip install Xlassify
+```
+
+From conda:
+```bash
+conda install -c ai4drug Xlassify
 ```
 
 From Docker:
@@ -95,7 +114,7 @@ conda activate py37
 pip install -r requirements.txt
 ```
 
-1. For 16S model, modify the parameters in `16s/fold.sh` file:
+1. For 16S model, modify the parameters in `train/16s/fold.sh` file:
 ```
 k=7                 # kmer size
 t="t"               # logname marker
@@ -106,14 +125,14 @@ data_type="full"    # full or partial
 
 Then execute the following scripts to train and test 16S model:
 ```bash
-cd 16s
+cd train/16s
 chmod +777 fold.sh
 ./fold.sh
 ```
 
 2. For genome model, just execute the following scripts to train and test genome model:
 ```bash
-cd genome
+cd train/genome
 chmod +777 run.sh
 ./run.sh
 ```
