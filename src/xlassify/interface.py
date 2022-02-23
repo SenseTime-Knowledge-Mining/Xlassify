@@ -290,7 +290,7 @@ def _load_model(flag, model):
         download(model_url, model_path)
     
     checkpoint = torch.load(model_path, map_location=torch.device('cpu'))
-    model = model.load_state_dict(checkpoint)
+    model.load_state_dict(checkpoint)
 
     print("load model params successful")
     return model
