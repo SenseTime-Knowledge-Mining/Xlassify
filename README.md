@@ -69,11 +69,12 @@ optional arguments:
                         Choose a model from {compute_kmer, species_genome,
                         genus_full, species_full}. Default: species_genome
   -i INPUT_PATH, --input_path INPUT_PATH
-                        The path of input fasta file.
+                        The path of input fasta file. Using testing data as
+                        default.
   -f INPUT_FILE_LST [INPUT_FILE_LST ...], --input_file_lst INPUT_FILE_LST [INPUT_FILE_LST ...]
                         The list of input file.
   -s SAVE_PATH, --save_path SAVE_PATH
-                        The path of save file. Default: ./results_genome
+                        The path of save file. Default: ./Xlassify_results
   -r SAVE_FILE, --save_file SAVE_FILE
                         The path of results file. Default: res.csv
   --save_kmer SAVE_KMER
