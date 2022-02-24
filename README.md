@@ -61,17 +61,17 @@ We provide three ways to install Xlassify locally via pip, conda or Docker.
 From pip:
 
 ```bash
-pip install Xlassify
+pip install xlassify
 ```
 
 From conda:
 ```bash
-conda install -c ai4drug Xlassify
+conda install -c ai4drug xlassify
 ```
 
 From Docker:
 ```bash
-docker pull SenseTime-Knowledge-Mining/Xlassify
+docker pull ai4drug/xlassify
 ```
 
 
@@ -102,6 +102,20 @@ optional arguments:
                         The batch of prediction.
   -k K                  The k of kmer. Default: 7
   --nproc NPROC         The number of CPUs to use. Default: 1
+```
+
+For docker:
+```bash
+# using default model and test sequence
+docker run \
+-v /home/maokangkun/Desktop/test/docker_pack_Xlassify/test/results_genome:/xlassify/out \
+ai4drug/xlassify -s out -r test1_out.csv --nproc 8 --save_kmer 0
+
+# using species_genome model and sequences in fasta_genome folder
+docker run \
+-v /home/maokangkun/Desktop/test/docker_pack_Xlassify/test/fasta_genome:/xlassify/input \
+-v /home/maokangkun/Desktop/test/docker_pack_Xlassify/test/results_genome:/xlassify/out \
+ai4drug/xlassify -m species_genome -i input -s out -r test2_out.csv --nproc 8 --save_kmer 0
 ```
 
 
