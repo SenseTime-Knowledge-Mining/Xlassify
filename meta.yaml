@@ -1,0 +1,54 @@
+{% set name = "Xlassify" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 0f18f97147053aa4f871f6239c21b9bf1fce8ad0b7a318468006b98afd007401
+
+build:
+  number: 0
+  entry_points:
+    - xlassify = xlassify.interface_test:main
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - numpy >=1.18
+    - pandas >=1.1
+    - pip
+    - python
+    - requests
+    - tqdm
+  run:
+    - numpy >=1.18
+    - pandas >=1.1
+    - python
+    - requests
+    - tqdm
+
+test:
+  # imports:
+  #   - xlassify
+  #   - xlassify.dataset
+  #   - xlassify.model
+  #   - xlassify.network
+  #   - xlassify.tools
+  # commands:
+  #   - xlassify --help
+
+about:
+  home: "https://github.com/SenseTime-Knowledge-Mining/Xlassify"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "An alignment-free deep-learning model trained to classify human gut bacteria"
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - maokangkun
