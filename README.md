@@ -7,11 +7,15 @@ Xlassify demonstrated 98% accuracy in UHGG genomes dataset and \~90% accuracy on
 
 ### Architecture
 
-16S model:
-![16s_model](./docs/images/16s_model.png)
+<!-- 16S model: -->
+<!-- ![16s_model](./docs/images/16s_model.png) -->
 
-genome model:
-![genome_model](./docs/images/genome_model.png)
+<!-- genome model: -->
+<!-- ![genome_model](./docs/images/genome_model.png) -->
+
+
+![genome_model](./docs/images/overall.png)
+
 
 
 ### Descriptions  
